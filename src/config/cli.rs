@@ -9,7 +9,7 @@ use clap::{crate_version, AppSettings, Parser, Subcommand};
 use std::str::FromStr;
 
 const FINDER_POSSIBLE_VALUES: &[&str] = &["fzf", "skim"];
-const WIDGET_POSSIBLE_VALUES: &[&str] = &["bash", "zsh", "fish", "elvish"];
+const WIDGET_POSSIBLE_VALUES: &[&str] = &["bash", "zsh", "fish", "elvish", "powershell"];
 const FUNC_POSSIBLE_VALUES: &[&str] = &["url::open", "welcome", "widget::last_command", "map::expand"];
 const INFO_POSSIBLE_VALUES: &[&str] = &["cheats-example", "cheats-path", "config-path", "config-example"];
 
@@ -22,6 +22,7 @@ impl FromStr for Shell {
             "zsh" => Ok(Shell::Zsh),
             "fish" => Ok(Shell::Fish),
             "elvish" => Ok(Shell::Elvish),
+            "powershell" => Ok(Shell::PowerShell),
             _ => Err("no match"),
         }
     }
