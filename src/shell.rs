@@ -7,6 +7,7 @@ use thiserror::Error;
 
 pub const EOF: &str = "NAVIEOF";
 
+#[allow(clippy::enum_variant_names)]
 #[derive(Debug)]
 pub enum Shell {
     Bash,
